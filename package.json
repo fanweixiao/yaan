@@ -1,0 +1,18 @@
+{
+	"private": true,
+	"name": "yaan_wx_robot",
+	"version": "0.1.0",
+	"author": "C.C. <fanweixiao@gmail.com>",
+	"description": "yaan_earthquake_find_pal",
+	"dependencies": {
+		"wechat": "*",
+    "express":"*",
+    "debug":"*",
+    "cheerio":"*",
+    "request":"*"
+	},
+	"license": "MIT",
+	"engines" : {
+		"node": ">=0.8"
+	}
+}
