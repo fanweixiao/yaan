@@ -44,7 +44,7 @@ Crawler_360.prototype.search = function(str, cb){
       }else{
         var res = $('dl>dt').html() + ", " + $('dl dd').find('span').html() + ". " + $('dl dd').find('p').html();
         debug_etao(str, "got");
-        cb(null, '[360报平安]' + res);
+        cb(null, '[360报平安]' + res + '\n');
       }
     }
     else{

@@ -17,7 +17,7 @@ app.use(express.query());
 
 
 var welcome = function(res){
-  res.reply('雅安地震寻人搜索整合帐号，输入姓名，将自动进行各大寻人网站的搜索，统一返回结果');
+  res.reply('雅安地震寻人搜索整合帐号，输入姓名，将自动进行各大寻人网站的搜索，统一返回结果.目前已接入：\n360报平安');
 };
 
 var search = function(str, res){
@@ -30,18 +30,20 @@ var search = function(str, res){
 };
 
 app.use('/', wechat('xiexiaopang', function(req, res, next){
-  console.log(util.inspect(req.weixin));
+  // console.log(util.inspect(req.weixin));
 
   var ctx = req.weixin;
 
   if(ctx.MsgType == 'event' && ctx.Event == 'subscribe'){
+    console.log("[SUB] " + ctx.FromUserName);
     welcome(res);
   }else if(ctx.MsgType == 'text'){
+    console.log("[Q] " + ctx.FromUserName + " " + ctx.Content);
     search(ctx.Content, res);
   }else if(ctx.MsgType == 'event' && ctx.Event == 'unsubscribe'){
-    console.log("unsubscribe:" + ctx.FromUserName + " " + ctx.CreateTime);
+    console.log("[UNSUB]" + ctx.FromUserName);
   }else{
-    res.reply('目前只支持寻人信息搜索，请输入名字');
+    res.reply('目前只支持寻人信息搜索，请输入名字进行查询');
   }
 }));
 
