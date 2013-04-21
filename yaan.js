@@ -35,13 +35,13 @@ app.use('/', wechat('xiexiaopang', function(req, res, next){
   var ctx = req.weixin;
 
   if(ctx.MsgType == 'event' && ctx.Event == 'subscribe'){
-    console.log("[SUB] " + ctx.FromUserName);
+    console.log("[SUB] " + ctx.FromUserName + " " + ctx.ToUserName);
     welcome(res);
   }else if(ctx.MsgType == 'text'){
-    console.log("[Q] " + ctx.FromUserName + " " + ctx.Content);
+    console.log("[Q] " + ctx.FromUserName + " " + ctx.ToUserName + " " + ctx.Content);
     search(ctx.Content, res);
   }else if(ctx.MsgType == 'event' && ctx.Event == 'unsubscribe'){
-    console.log("[UNSUB]" + ctx.FromUserName);
+    console.log("[UNSUB] " + ctx.FromUserName + " " + ctx.ToUserName);
   }else{
     res.reply('目前只支持寻人信息搜索，请输入名字进行查询');
   }
