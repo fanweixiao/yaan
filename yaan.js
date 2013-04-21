@@ -17,7 +17,7 @@ app.use(express.query());
 
 
 var welcome = function(res){
-  res.reply('我们暂时切换到<雅安地震寻人搜索整合>频道，输入姓名，将自动进行整合寻人网站的搜索，统一返回结果.目前已接入：\n360报平安平台');
+  res.reply('我们暂时切换到<雅安地震寻人搜索整合>频道，输入姓名，将整合互联网各大报平安服务的数据。目前已接入平台：\n360报平安平台');
 };
 
 var search = function(str, res){
