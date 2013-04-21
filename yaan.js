@@ -23,7 +23,7 @@ var welcome = function(res){
 var search = function(str, res){
   Crawler.search(str, function(err, result){
     if(err)
-      res.reply('您搜索的【'+str+'】暂时还没有信息，请稍后再查询。');
+      res.reply('您搜索的【'+str+'】暂时还没有信息，请勿着急，我们接入更多的寻人平台数据。本次搜索路径：「360报平安平台」');
     else
       res.reply(result);
   });
