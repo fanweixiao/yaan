@@ -17,13 +17,13 @@ app.use(express.query());
 
 
 var welcome = function(res){
-  res.reply('雅安地震寻人搜索整合帐号，输入姓名，将自动进行各大寻人网站的搜索，统一返回结果.目前已接入：\n360报平安');
+  res.reply('我们暂时切换到<雅安地震寻人搜索整合>频道，输入姓名，将自动进行整合寻人网站的搜索，统一返回结果.目前已接入：\n360报平安平台');
 };
 
 var search = function(str, res){
   Crawler.search(str, function(err, result){
     if(err)
-      res.reply('您搜索的【'+str+'】赞时还没有信息，请稍后再查询。');
+      res.reply('您搜索的【'+str+'】暂时还没有信息，请稍后再查询。');
     else
       res.reply(result);
   });
