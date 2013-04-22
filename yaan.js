@@ -24,7 +24,7 @@ var search = function(str, res){
     if(err)
       res.reply('您搜索的【'+str+'】暂时还没有信息，请勿着急，我们接入更多的寻人平台数据。本次搜索路径：\n「360报平安平台」\n「baidu整合搜索」');
     else
-      res.reply(result);
+      res.reply('该公众帐号目前暂时切换至雅安地震寻人公益项目频道，您刚才的搜索结果为：\n' + result);
   });
 };
 
