@@ -56,12 +56,12 @@ Crawler_baidu.prototype.format = function(users){
   if(users.length === 0){
     userStr.push('[baidu整合搜索无结果,或尝试精确用户名]\n');
   };
-  userStr.push('{本次搜索路径：百度}');
+  userStr.push('{本次搜索路径：百度}\n');
   return userStr.join('');
 };
 
 //var c_baidu = new Crawler_baidu();
-//c_baidu.search('光i辉', function(r, n){ 
+//c_baidu.search('光i辉', function(r, n){
 //  debug('ERR',r);
 //  console.log(n);
 //});

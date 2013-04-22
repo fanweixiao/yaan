@@ -17,7 +17,7 @@ Crawler_360.prototype.search = function(str, cb){
       cb(err);
       return;
     }
-    
+
     debug_360('statusCode', resp.statusCode);
     //console.log(body);
 
@@ -26,7 +26,7 @@ Crawler_360.prototype.search = function(str, cb){
     if(dl.length > 0){
       if(dl.length > 3){
         debug_360(str, "too many");
-        cb("none");
+        cb(null, "无准确搜索结果{本次搜索路径：360报平安}\n");
       }else{
         var res = $('dl>dt').html() + ", " + $('dl dd').find('span').html() + ". " + $('dl dd').find('p').html();
         debug_360(str, "got");
@@ -35,7 +35,7 @@ Crawler_360.prototype.search = function(str, cb){
     }
     else{
       debug_360(str, "empty");
-      cb("none");
+      cb(null, "无准确搜索结果{本次搜索路径：360报平安}\n");
     }
   });
 };

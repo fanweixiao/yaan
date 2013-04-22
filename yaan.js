@@ -22,15 +22,13 @@ var welcome = function(res){
 var search = function(str, res){
   Crawler.search(str, function(err, result){
     if(err)
-      res.reply('您搜索的【'+str+'】暂时还没有信息，请勿着急，我们接入更多的寻人平台数据。本次搜索路径：「360报平安平台」');
+      res.reply('您搜索的【'+str+'】暂时还没有信息，请勿着急，我们接入更多的寻人平台数据。本次搜索路径：\n「360报平安平台」\n「baidu整合搜索」');
     else
       res.reply(result);
   });
 };
 
 app.use('/', wechat('xiexiaopang', function(req, res, next){
-  // console.log(util.inspect(req.weixin));
-
   var ctx = req.weixin;
 
   if(ctx.MsgType == 'event' && ctx.Event == 'subscribe'){
