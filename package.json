@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "yaan_wx_robot",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "C.C. <fanweixiao@gmail.com>",
 	"description": "yaan_earthquake_find_pal",
 	"dependencies": {
