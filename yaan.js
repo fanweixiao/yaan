@@ -5,22 +5,19 @@ var express = require('express');
 
 var Crawler = require('./search').Crawler;
 var Crawler_360 = require('./search').Crawler_360;
+var Crawler_baidu = require('./search').Crawler_baidu;
 
 var c_360 = new Crawler_360();
-Crawler.register(c_360);
+var c_baidu = new Crawler_baidu();
+//Crawler.register(c_360);
+Crawler.register(c_baidu);
 
 
 
 var app = express();
 app.use(express.query());
 
-log = function(_type, _str) {
-  return fs.appendFile("./" + _type + ".log", "" + (new Date) + " " + _str + " \n", function(_err) {
-    if (_err) {
-      return console.log("fs.appendFile err: " + _err + " " + _type + " " + _str);
-    }
-  });
-};
+
 
 var welcome = function(res){
   res.reply('我们暂时切换到<雅安地震寻人搜索整合>频道，输入姓名，将整合互联网各大报平安服务的数据。目前已接入平台：\n360报平安平台');
